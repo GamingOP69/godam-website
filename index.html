@@ -2,42 +2,801 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="theme-color" content="#eab308">
 <title>Godam | Coming Soon</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
+<!-- Favicon - Multiple sizes for all devices -->
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9IiNlYWIzMDgiLz4KPHBhdGggZD0iTTUwIDIwTDEwIDUwVjg1SDkwVjUwTDUwIDIwWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQwIDYwSDUwVjcwSDU1VjY1SDYwVjcwSDY1VjYwSDcwVjU1SDY1VjUwSDYwVjU1SDU1VjUwSDUwVjU1SDQ1VjYwWiIgZmlsbD0iI2VhYjMwOCIvPgo8L3N2Zz4K">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjZWFiMzA4Ii8+CjxwYXRoIGQ9Ik01MCAyMEwxMCA1MFY4NUg5MFY1MEw1MCAyMFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00MCA2MEg1MFY3MEg1NVY2NUg2MFY3MEg2NVY2MEg3MFY1NUg2NVY1MEg2MFY1NUg1NVY1MEg1MFY1NUg0NVY2MFoiIGZpbGw9IiNlYWIzMDgiLz4KPC9zdmc+Cg==">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO2WO0pEMRiE4xIJ4hHEA4iPoCj+7sKD+BhCxO1Z7GGDrY0tio2NpY1bWFq6hYViYed2bqx3kMAjH8RXz3RCyGQYhpn5T2aCC2Z+H9/ggv8iQgZAAqCsnxHg6XzPpYgJHRwxAQcHAAcJ9eKd4wIuLgi6oAB84/fX8q8uATe+HF3G4NlGxgX7VzAANjggTqHvHn8C0Rz/DwOe8RlQSGsCLs44BQLb/I4qAtHm+JwBeU5RJo1INMd/A8DxqQDw2dCcDp+DRgD47M3rIB4A0wLwma0BHQRPwGaMjQ0IRoTDCwCvzHx+7FqFC3OqKQEkzHx+5FqFC3OMgGkAuOcFCYGE2TClTQ+Ac8I1gHEB3zGL8wEJAy7+GYB7XpAQSOgCSBglYOjCLyYMAE0B8M7cBAAYJ+CiMAcBiRAKiYQRpx3lRAAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzElEQVR4nGNgGAWjYDABJiam/yMjI/8TE2ck/P//H09MHB4e/mJERMSfgwcPEhWPBpCQkPAfFxf3f9GiRf8tLS3/A9Wg6SBKQ0pKyv+9e/f+P3369P+AgID/QL3/BWAcrQ2wCUxMTP4fPnz4/4sXL/4vWbLkP1D9f34gR2sDHIDq9+/f/z9//vx/XV3df6C+/8JQzsjIiIIDePDgAUocwNPp7+//H6j2vwSIs7Cw4GjAp0+f/s+ePfs/MAxAHASOHTsGawCTmpra/xkzZvx/+/bt/+/fv/+/ffv2/4aGhv9AfZimAwC8RUEV/mIt1gAAAABJRU5ErkJggg==">
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AGxsbADExMQAAAD/AP///wD///8A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERIREREA==">
+
+<style>
+/* Reset with improved performance */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Performance optimized animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.05); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Background elements with reduced motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  .bg-circle {
+    animation: float 20s ease-in-out infinite;
+  }
+}
+
+.bg-circle {
+  position: fixed;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 179, 8, 0.1) 0%, rgba(234, 179, 8, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.circle-1 {
+  width: min(60vw, 800px);
+  height: min(60vw, 800px);
+  top: -20vh;
+  right: -20vw;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: min(40vw, 500px);
+  height: min(40vw, 500px);
+  bottom: -10vh;
+  left: -10vw;
+  animation-delay: 2s;
+}
+
+.circle-3 {
+  width: min(30vw, 300px);
+  height: min(30vw, 300px);
+  top: 50%;
+  left: 70%;
+  animation-delay: 4s;
+}
+
+/* Main container */
+.coming-soon-container {
+  max-width: min(800px, 90vw);
+  width: 100%;
+  padding: clamp(30px, 4vw, 50px);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: clamp(20px, 3vw, 30px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Logo recreation */
+.logo-wrapper {
+  margin-bottom: clamp(30px, 4vw, 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.logo-container {
+  position: relative;
+  width: clamp(100px, 20vw, 160px);
+  height: clamp(100px, 20vw, 160px);
+  margin-bottom: clamp(15px, 2vw, 25px);
+  filter: drop-shadow(0 10px 20px rgba(234, 179, 8, 0.3));
+}
+
+/* House base */
+.house-base {
+  position: absolute;
+  width: 70%;
+  height: 55%;
+  background: #eab308;
+  border-radius: 12px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+    inset 0 4px 12px rgba(255, 255, 255, 0.2),
+    0 8px 24px rgba(234, 179, 8, 0.4);
+}
+
+/* House roof */
+.house-roof {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: min(45px, 6vw) solid transparent;
+  border-right: min(45px, 6vw) solid transparent;
+  border-bottom: min(35px, 5vw) solid #eab308;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* G letter inside house */
+.g-letter {
+  position: absolute;
+  width: 45%;
+  height: 45%;
+  border: clamp(4px, 0.8vw, 8px) solid #f8fafc;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.g-letter::before {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: clamp(4px, 0.8vw, 8px);
+  background: #f8fafc;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.g-letter::after {
+  content: '';
+  position: absolute;
+  width: clamp(4px, 0.8vw, 8px);
+  height: 30%;
+  background: #f8fafc;
+  top: 25%;
+  right: 10%;
+  border-radius: 2px;
+}
+
+.logo-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(to right, #eab308, #facc15, #fde047, #facc15, #eab308);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: clamp(4px, 1vw, 10px);
+  letter-spacing: 1px;
+  animation: shimmer 3s linear infinite;
+  line-height: 1.1;
+}
+
+.logo-subtitle {
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  letter-spacing: clamp(3px, 1.5vw, 8px);
+  color: #cbd5e1;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  letter-spacing: 0.3em;
+}
+
+/* Content area */
+.content {
+  margin: clamp(30px, 4vw, 50px) 0;
+}
+
+.coming-soon-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: clamp(15px, 2vw, 25px);
+  background: linear-gradient(to right, #f8fafc, #e2e8f0, #cbd5e1, #e2e8f0, #f8fafc);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+  animation: shimmer 4s linear infinite;
+  line-height: 1.2;
+}
+
+.coming-soon-title::after {
+  content: '🚀';
+  position: absolute;
+  right: clamp(-35px, -5vw, -50px);
+  top: 0;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  animation: float 3s ease-in-out infinite;
+}
+
+.coming-soon-text {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: min(600px, 90%);
+  margin: 0 auto clamp(20px, 3vw, 30px);
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.highlight {
+  color: #eab308;
+  font-weight: 600;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #eab308, transparent);
+}
+
+/* Countdown timer */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
+  gap: clamp(10px, 2vw, 20px);
+  margin: clamp(30px, 4vw, 50px) 0;
+  animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.countdown-item {
+  background: rgba(30, 41, 59, 0.8);
+  padding: clamp(15px, 2vw, 25px) clamp(10px, 1.5vw, 20px);
+  border-radius: clamp(10px, 1.5vw, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 16px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(234, 179, 8, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.countdown-value {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #eab308;
+  margin-bottom: clamp(4px, 1vw, 8px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-label {
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* Progress bar */
+.progress-container {
+  max-width: min(500px, 90%);
+  margin: clamp(30px, 4vw, 50px) auto;
+  animation: fadeInUp 0.6s ease-out 0.8s both;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  color: #94a3b8;
+}
+
+.progress-bar {
+  height: clamp(6px, 1vw, 10px);
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #eab308, #facc15, #fde047, #facc15, #eab308);
+  background-size: 200% auto;
+  width: 75%;
+  border-radius: 100px;
+  position: relative;
+  animation: 
+    progress 2s ease-out,
+    shimmer 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes progress {
+  0% { width: 0; }
+  100% { width: 75%; }
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 20px);
+  margin: clamp(25px, 3vw, 40px) 0;
+  animation: fadeInUp 0.6s ease-out 1s both;
+}
+
+.social-icon {
+  width: clamp(44px, 6vw, 56px);
+  height: clamp(44px, 6vw, 56px);
+  border-radius: 50%;
+  background: rgba(30, 41, 59, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: #eab308;
+  color: #0f172a;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 
+    0 12px 24px rgba(234, 179, 8, 0.4),
+    0 0 0 4px rgba(234, 179, 8, 0.1);
+}
+
+/* Footer */
+footer {
+  margin-top: clamp(30px, 4vw, 50px);
+  padding-top: clamp(15px, 2vw, 25px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  color: #94a3b8;
+  animation: fadeInUp 0.6s ease-out 1.2s both;
+}
+
+.powered-by {
+  color: #eab308;
+  font-weight: 600;
+}
+
+/* Enhanced Responsiveness */
+
+/* Tablet and Large Mobile */
+@media (max-width: 768px) {
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .coming-soon-title::after {
+    position: relative;
+    right: 0;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  body {
+    padding: 15px;
+  }
+  
+  .coming-soon-container {
+    padding: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .countdown {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .countdown-item {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+  
+  .countdown-value {
+    margin-bottom: 0;
+  }
+  
+  .social-icons {
+    gap: 12px;
+  }
+  
+  .logo-subtitle {
+    letter-spacing: 0.2em;
+  }
+}
+
+/* Large Screens (TV, Desktop) */
+@media (min-width: 1200px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .coming-soon-container {
+    max-width: 900px;
+    padding: 60px;
+  }
+  
+  .countdown {
+    gap: 25px;
+  }
+}
+
+/* Extra Large Screens (4K, TV) */
+@media (min-width: 2000px) {
+  html {
+    font-size: 24px;
+  }
+  
+  .coming-soon-container {
+    max-width: 1200px;
+    padding: 80px;
+  }
+  
+  .countdown {
+    gap: 30px;
+  }
+  
+  .logo-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .coming-soon-title::after,
+  .bg-circle {
+    animation: none;
+  }
+}
+
+/* Dark/Light Mode Support */
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
+    color: #1e293b;
+  }
+  
+  .coming-soon-container {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-subtitle,
+  .coming-soon-text,
+  .countdown-label,
+  .progress-text,
+  footer {
+    color: #475569;
+  }
+  
+  .countdown-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .progress-bar {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .social-icon {
+    background: rgba(255, 255, 255, 0.8);
+    color: #475569;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Landscape mode for mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+  }
+  
+  .coming-soon-container {
+    padding: 20px;
+  }
+  
+  .logo-container {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    margin: 20px 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .bg-circle,
+  .social-icons,
+  .coming-soon-title::after {
+    display: none;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .coming-soon-container {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    background: white !important;
+  }
+}
+</style>
 </head>
 <body>
-
-<div class="coming-soon-container">
-
-  <!-- Logo -->
-  <div class="logo-wrapper">
-    <div class="icon">
-      <div class="roof"></div>
-      <div class="house"></div>
-      <div class="g-shape"></div>
-      <div class="g-cut"></div>
+  <!-- Background elements -->
+  <div class="bg-circle circle-1"></div>
+  <div class="bg-circle circle-2"></div>
+  <div class="bg-circle circle-3"></div>
+  
+  <div class="coming-soon-container">
+    <!-- Logo -->
+    <div class="logo-wrapper">
+      <div class="logo-container">
+        <div class="house-roof"></div>
+        <div class="house-base"></div>
+        <div class="g-letter"></div>
+      </div>
+      <div class="logo-title">GODAM</div>
+      <div class="logo-subtitle">ONLINE MARKETPLACE</div>
     </div>
-    <div class="title">GODAM</div>
-    <div class="subtitle">ONLINE MARKETPLACE</div>
+    
+    <!-- Content -->
+    <div class="content">
+      <h1 class="coming-soon-title">Coming Soon</h1>
+      <p class="coming-soon-text">We're building a revolutionary <span class="highlight">online marketplace</span> that will transform how you buy and sell. Our platform is currently under development and will be launched shortly.</p>
+      
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="countdown-value" id="days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+      
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-text">
+          <span>Development Progress</span>
+          <span>75%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+      
+      <!-- Social Icons -->
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 <span class="highlight">GODAM</span> | <span class="powered-by">Powered by Innovation</span></p>
+      <p style="margin-top: clamp(5px, 1vw, 10px); font-size: clamp(0.7rem, 1.2vw, 0.8rem); opacity: 0.8;">All rights reserved. • Godam Online Marketplace</p>
+    </footer>
   </div>
 
-  <!-- Coming Soon Text -->
-  <h1>Coming Soon 🚀</h1>
-  <p>We are working hard to bring you something amazing. Stay tuned!</p>
-
-  <!-- Email Notify -->
-  <form class="notify-form">
-    <input type="email" placeholder="Enter your email" required>
-    <button type="submit">Notify Me</button>
-  </form>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 GODAM | Powered by MUTO</p>
-  </footer>
-
-</div>
-
+  <script>
+    // Performance optimized countdown timer
+    let animationFrameId;
+    
+    function updateCountdown() {
+      // Set launch date (3 months from now)
+      const launchDate = new Date();
+      launchDate.setMonth(launchDate.getMonth() + 3);
+      launchDate.setHours(12, 0, 0, 0); // Set to noon for consistency
+      
+      const now = new Date().getTime();
+      const timeLeft = launchDate - now;
+      
+      if (timeLeft <= 0) {
+        // Launch time reached
+        document.querySelectorAll('.countdown-value').forEach(el => {
+          el.textContent = '00';
+        });
+        document.querySelector('.coming-soon-title').textContent = 'We\'re Live! 🎉';
+        document.querySelector('.coming-soon-text').textContent = 'Godam Online Marketplace is now live. Start exploring!';
+        document.querySelector('.progress-fill').style.width = '100%';
+        document.querySelector('.progress-text span:last-child').textContent = '100%';
+        return;
+      }
+      
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      
+      // Update only if changed (performance optimization)
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      
+      if (daysEl.textContent !== days.toString().padStart(2, '0')) {
+        daysEl.textContent = days.toString().padStart(2, '0');
+      }
+      if (hoursEl.textContent !== hours.toString().padStart(2, '0')) {
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+      }
+      if (minutesEl.textContent !== minutes.toString().padStart(2, '0')) {
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+      }
+      if (secondsEl.textContent !== seconds.toString().padStart(2, '0')) {
+        secondsEl.textContent = seconds.toString().padStart(2, '0');
+      }
+      
+      // Schedule next update
+      animationFrameId = requestAnimationFrame(() => {
+        setTimeout(updateCountdown, 1000);
+      });
+    }
+    
+    // Start countdown
+    updateCountdown();
+    
+    // Lazy load animations for performance
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '50px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    document.querySelectorAll('.logo-wrapper, .content, .countdown, .progress-container, .social-icons, footer').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Handle page visibility for performance
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrameId);
+      } else {
+        updateCountdown();
+      }
+    });
+    
+    // Handle resize efficiently
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        // Update any layout-dependent elements here
+      }, 250);
+    });
+    
+    // Add loading state for better perceived performance
+    window.addEventListener('load', () => {
+      document.body.style.opacity = '1';
+      document.body.style.transition = 'opacity 0.3s ease';
+    });
+  </script>
 </body>
 </html>
