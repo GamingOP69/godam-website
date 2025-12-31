@@ -10,17 +10,15 @@
 <meta property="og:description" content="Experience the future of commerce with Godam's revolutionary online marketplace.">
 <meta property="og:type" content="website">
 
-<!-- Favicon Links -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" as="style">
 
-<!-- Fonts -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23eab308%22/><text x=%2250%22 y=%2260%22 font-family=%22sans-serif%22 font-size=%2260%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>G</text></svg>" type="image/svg+xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -44,7 +42,6 @@
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   
   /* Shadows */
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -92,11 +89,17 @@ body {
   align-items: center;
   text-align: center;
   padding: 1rem;
-  overflow: hidden;
+  overflow: hidden; /* Kept based on design, but be careful on small screens */
   position: relative;
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 0.3px;
+  opacity: 0; /* Init hidden to prevent FOUC, JS reveals it */
+  transition: opacity 0.5s ease-in;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 /* ===== ANIMATED BACKGROUND LAYERS ===== */
@@ -124,6 +127,7 @@ body {
     radial-gradient(circle at 40% 80%, var(--yellow-lighter) 0%, transparent 50%);
   opacity: 0.1;
   filter: blur(60px);
+  will-change: transform;
   animation: meshFloat 20s infinite alternate ease-in-out;
 }
 
@@ -141,7 +145,8 @@ body {
   background: var(--primary-yellow);
   border-radius: var(--radius-full);
   opacity: 0.3;
-  filter: blur(0.5px);
+  /* Optimization: will-change added */
+  will-change: transform; 
 }
 
 /* Animated Grid */
@@ -162,141 +167,57 @@ body {
 
 /* ===== ANIMATION KEYFRAMES ===== */
 @keyframes meshFloat {
-  0%, 100% { 
-    transform: translate(0, 0) scale(1); 
-  }
-  25% { 
-    transform: translate(-5%, 5%) scale(1.1); 
-  }
-  50% { 
-    transform: translate(5%, -5%) scale(0.95); 
-  }
-  75% { 
-    transform: translate(-3%, -3%) scale(1.05); 
-  }
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-10%, -10%) scale(1.1); }
 }
 
 @keyframes gridScroll {
-  0% { 
-    transform: translate(0, 0); 
-  }
-  100% { 
-    transform: translate(-50px, -50px); 
-  }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50px, -50px); }
 }
 
 @keyframes floatElement {
-  0%, 100% { 
-    transform: translateY(0) rotate(0deg); 
-  }
-  33% { 
-    transform: translateY(-15px) rotate(1deg); 
-  }
-  66% { 
-    transform: translateY(5px) rotate(-1deg); 
-  }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
 }
 
 @keyframes pulseSoft {
-  0%, 100% { 
-    opacity: 1; 
-    transform: scale(1); 
-  }
-  50% { 
-    opacity: 0.8; 
-    transform: scale(1.02); 
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
 }
 
 @keyframes shimmer {
-  0% { 
-    background-position: -200% center; 
-  }
-  100% { 
-    background-position: 200% center; 
-  }
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes countdownPop {
-  0% { 
-    transform: scale(1); 
-  }
-  50% { 
-    transform: scale(1.3); 
-  }
-  100% { 
-    transform: scale(1); 
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
 }
 
 @keyframes progressFill {
-  0% { 
-    width: 0; 
-  }
-  100% { 
-    width: 88%; 
-  }
-}
-
-@keyframes glowPulse {
-  0%, 100% { 
-    box-shadow: 0 0 20px var(--yellow-glow); 
-  }
-  50% { 
-    box-shadow: 0 0 50px var(--yellow-glow); 
-  }
-}
-
-@keyframes numberFlip {
-  0% { 
-    transform: rotateX(0deg); 
-  }
-  50% { 
-    transform: rotateX(90deg); 
-  }
-  100% { 
-    transform: rotateX(0deg); 
-  }
+  0% { width: 0; }
+  100% { width: 88%; }
 }
 
 @keyframes rocketLaunch {
-  0% { 
-    transform: translateY(0) rotate(0deg); 
-  }
-  25% { 
-    transform: translateY(-20px) rotate(-10deg); 
-  }
-  50% { 
-    transform: translateY(-40px) rotate(10deg); 
-  }
-  75% { 
-    transform: translateY(-20px) rotate(-5deg); 
-  }
-  100% { 
-    transform: translateY(0) rotate(0deg); 
-  }
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(-5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-5px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 
 @keyframes particleExplode {
-  0% { 
-    transform: translate(0, 0) scale(1); 
-    opacity: 1; 
-  }
-  100% { 
-    transform: translate(var(--tx), var(--ty)) scale(0); 
-    opacity: 0; 
-  }
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
 }
 
 /* ===== MAIN CONTAINER ===== */
@@ -310,17 +231,20 @@ body {
   -webkit-backdrop-filter: blur(25px) saturate(180%);
   border-radius: var(--radius-xl);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    var(--shadow-hard),
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    var(--shadow-inset);
+  box-shadow: var(--shadow-hard), 0 0 0 1px rgba(255, 255, 255, 0.08), var(--shadow-inset);
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  /* Visibility handled by JS staggers now */
+  opacity: 0; 
+}
+
+.main-container.visible {
+  opacity: 1;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .main-container::before {
@@ -330,10 +254,7 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    var(--primary-yellow), 
-    transparent);
+  background: linear-gradient(90deg, transparent, var(--primary-yellow), transparent);
   z-index: 2;
 }
 
@@ -342,14 +263,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
   padding-top: 1rem;
 }
 
 .logo-wrapper {
   position: relative;
-  width: clamp(100px, 18vw, 160px);
-  height: clamp(100px, 18vw, 160px);
+  width: clamp(80px, 15vw, 140px);
+  height: clamp(80px, 15vw, 140px);
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }
 
@@ -364,17 +284,12 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: 
-    drop-shadow(0 10px 25px rgba(234, 179, 8, 0.5))
-    drop-shadow(0 0 40px rgba(234, 179, 8, 0.3));
-  transition: all var(--transition-medium);
+  filter: drop-shadow(0 10px 25px rgba(234, 179, 8, 0.5));
+  transition: transform var(--transition-medium);
 }
 
 .logo-img:hover {
   transform: scale(1.08);
-  filter: 
-    drop-shadow(0 15px 35px rgba(234, 179, 8, 0.7))
-    drop-shadow(0 0 60px rgba(234, 179, 8, 0.4));
 }
 
 .logo-glow {
@@ -391,32 +306,16 @@ body {
   animation: pulseSoft 4s ease-in-out infinite;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.logo-title {
+.logo-text h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 900;
-  background: linear-gradient(
-    135deg,
-    var(--primary-yellow) 0%,
-    var(--yellow-light) 25%,
-    var(--yellow-lighter) 50%,
-    var(--yellow-light) 75%,
-    var(--primary-yellow) 100%
-  );
-  background-size: 300% auto;
+  background: linear-gradient(135deg, var(--primary-yellow), var(--yellow-lighter));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   line-height: 1;
-  letter-spacing: -0.5px;
-  animation: shimmer 4s linear infinite;
+  margin-bottom: 0.25rem;
 }
 
 .logo-subtitle {
@@ -435,14 +334,12 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 1rem 0;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .coming-soon-title {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 800;
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -450,12 +347,7 @@ body {
 }
 
 .title-text {
-  background: linear-gradient(
-    135deg,
-    var(--white-dim) 0%,
-    var(--white) 50%,
-    var(--white-dim) 100%
-  );
+  background: linear-gradient(135deg, var(--white-dim) 0%, var(--white) 50%, var(--white-dim) 100%);
   background-size: 250% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -466,7 +358,6 @@ body {
 .rocket-icon {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   animation: rocketLaunch 4s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(234, 179, 8, 0.6));
 }
 
 .coming-soon-text {
@@ -481,41 +372,38 @@ body {
   color: var(--primary-yellow);
   font-weight: 600;
   position: relative;
-  padding: 0 0.2rem;
+  display: inline-block;
 }
 
 .text-highlight::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    var(--primary-yellow), 
-    transparent);
+  background: var(--primary-yellow);
   transform: scaleX(0);
+  transform-origin: right;
   transition: transform var(--transition-medium);
 }
 
 .text-highlight:hover::after {
   transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* ===== COUNTDOWN SECTION ===== */
 .countdown-section {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
   margin: clamp(1rem, 2vw, 2rem) 0;
 }
 
 .countdown-title {
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  font-size: 0.9rem;
   color: var(--gray-medium);
-  margin-bottom: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .countdown-grid {
@@ -537,32 +425,10 @@ body {
   overflow: hidden;
 }
 
-.countdown-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    var(--primary-yellow), 
-    var(--yellow-light), 
-    var(--primary-yellow));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-medium);
-}
-
 .countdown-card:hover {
   transform: translateY(-5px);
   border-color: rgba(234, 179, 8, 0.25);
-  box-shadow: 
-    var(--shadow-medium),
-    var(--shadow-glow);
-}
-
-.countdown-card:hover::before {
-  transform: scaleX(1);
+  box-shadow: var(--shadow-medium), var(--shadow-glow);
 }
 
 .countdown-value {
@@ -572,14 +438,7 @@ body {
   margin-bottom: 0.25rem;
   font-variant-numeric: tabular-nums;
   line-height: 1;
-  text-shadow: 0 2px 10px rgba(234, 179, 8, 0.3);
-  transition: all var(--transition-medium);
   display: block;
-  min-height: 1.2em;
-}
-
-.countdown-card:hover .countdown-value {
-  color: var(--yellow-light);
 }
 
 .countdown-label {
@@ -594,7 +453,7 @@ body {
 .progress-section {
   max-width: 600px;
   margin: clamp(1rem, 2vw, 2rem) auto;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+  width: 100%;
 }
 
 .progress-header {
@@ -605,13 +464,12 @@ body {
 }
 
 .progress-title {
-  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+  font-size: 0.9rem;
   color: var(--gray-medium);
-  font-weight: 500;
 }
 
 .progress-percent {
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-size: 1rem;
   color: var(--primary-yellow);
   font-weight: 700;
 }
@@ -626,33 +484,21 @@ body {
 
 .progress-bar-fill {
   height: 100%;
-  width: 88%;
-  background: linear-gradient(
-    90deg,
-    var(--primary-yellow),
-    var(--yellow-light),
-    var(--yellow-lighter),
-    var(--yellow-light),
-    var(--primary-yellow)
-  );
-  background-size: 300% 100%;
+  width: 0; /* JS will fill this */
+  background: linear-gradient(90deg, var(--primary-yellow), var(--yellow-lighter));
   border-radius: var(--radius-full);
-  animation: 
-    progressFill 2.5s cubic-bezier(0.16, 1, 0.3, 1),
-    shimmer 3s linear infinite;
+  transition: width 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ===== SOCIAL SECTION ===== */
 .social-section {
   margin: clamp(1rem, 2vw, 2rem) 0;
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
 }
 
 .social-title {
-  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+  font-size: 0.9rem;
   color: var(--gray-medium);
-  margin-bottom: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .social-icons {
@@ -679,61 +525,28 @@ body {
   overflow: hidden;
 }
 
-.social-icon::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--primary-yellow),
-    var(--yellow-light)
-  );
-  opacity: 0;
-  transition: opacity var(--transition-medium);
-}
-
 .social-icon:hover {
   transform: translateY(-3px) scale(1.1);
   color: var(--dark-blue);
+  background: var(--primary-yellow);
   border-color: transparent;
-  box-shadow: 
-    var(--shadow-glow),
-    0 8px 25px rgba(234, 179, 8, 0.3);
-}
-
-.social-icon:hover::before {
-  opacity: 1;
-}
-
-.social-icon i {
-  position: relative;
-  z-index: 1;
+  box-shadow: var(--shadow-glow);
 }
 
 /* ===== FOOTER SECTION ===== */
 .footer-section {
   padding-top: clamp(1rem, 2vw, 1.5rem);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
 }
 
 .footer-text {
   font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   color: var(--gray-medium);
-  margin-bottom: 0.25rem;
 }
 
 .footer-highlight {
   color: var(--primary-yellow);
   font-weight: 700;
-}
-
-.footer-copyright {
-  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
-  color: var(--gray-dark);
 }
 
 /* ===== COUNTDOWN OVERLAY (Last 60 Seconds) ===== */
@@ -763,7 +576,7 @@ body {
 .overlay-content {
   text-align: center;
   max-width: 800px;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .overlay-title {
@@ -771,19 +584,10 @@ body {
   font-weight: 900;
   color: var(--primary-yellow);
   margin-bottom: 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--primary-yellow),
-    var(--yellow-light),
-    var(--yellow-lighter),
-    var(--yellow-light),
-    var(--primary-yellow)
-  );
-  background-size: 300% auto;
+  background: linear-gradient(135deg, var(--primary-yellow), var(--white));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shimmer 2s linear infinite;
 }
 
 .overlay-countdown {
@@ -792,10 +596,7 @@ body {
   color: var(--white);
   margin: 2rem 0;
   font-variant-numeric: tabular-nums;
-  text-shadow: 
-    0 0 20px var(--primary-yellow),
-    0 0 40px var(--yellow-light);
-  animation: pulseSoft 1s ease-in-out infinite;
+  text-shadow: 0 0 20px var(--primary-yellow);
 }
 
 .overlay-message {
@@ -805,302 +606,59 @@ body {
   opacity: 0.9;
 }
 
-.overlay-glow {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, var(--primary-yellow) 0%, transparent 70%);
-  opacity: 0.2;
-  filter: blur(100px);
-  animation: pulseSoft 2s ease-in-out infinite;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Large Tablets & Small Laptops */
-@media (max-width: 1024px) {
-  .countdown-grid {
-    gap: 0.75rem;
-  }
-  
-  .countdown-card {
-    padding: 1rem;
-  }
-  
-  .countdown-value {
-    font-size: 2.2rem;
-  }
-}
-
-/* Tablets */
+/* ===== RESPONSIVE TWEAKS ===== */
 @media (max-width: 768px) {
   .main-container {
     height: auto;
-    min-height: min(95vh, 800px);
+    min-height: 95vh;
+    padding: 1.5rem;
   }
   
   .countdown-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
     max-width: 400px;
   }
-  
-  .social-icons {
-    gap: 0.75rem;
+
+  .logo-text h1 {
+    font-size: 2.5rem;
   }
 }
 
-/* Mobile Phones */
-@media (max-width: 640px) {
-  body {
-    padding: 0.5rem;
-  }
-  
-  .main-container {
-    padding: 1.5rem;
-    border-radius: var(--radius-lg);
-  }
-  
-  .logo-wrapper {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .logo-title {
-    font-size: 2.2rem;
-  }
-  
-  .coming-soon-title {
-    font-size: 1.8rem;
-  }
-  
-  .countdown-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-  
-  .countdown-card {
-    padding: 0.75rem;
-  }
-  
-  .countdown-value {
-    font-size: 1.8rem;
-  }
-  
-  .overlay-content {
-    padding: 1.5rem;
-  }
-  
-  .overlay-countdown {
-    font-size: 4rem;
-  }
+@media (max-width: 380px) {
+  .logo-wrapper { width: 70px; height: 70px; }
+  .logo-text h1 { font-size: 2rem; }
+  .coming-soon-title { font-size: 1.5rem; }
+  .countdown-value { font-size: 1.8rem; }
 }
 
-/* Small Mobile Phones */
-@media (max-width: 375px) {
-  .main-container {
-    padding: 1rem;
-  }
-  
-  .logo-wrapper {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .logo-title {
-    font-size: 1.8rem;
-  }
-  
-  .coming-soon-title {
-    font-size: 1.5rem;
-  }
-  
-  .countdown-grid {
-    grid-template-columns: 1fr;
-    max-width: 200px;
-  }
-  
-  .social-icon {
-    width: 2.2rem;
-    height: 2.2rem;
-    font-size: 1rem;
-  }
-}
-
-/* Large Screens (TVs, 4K Monitors) */
-@media (min-width: 1600px) {
-  html {
-    font-size: 18px;
-  }
-  
-  .main-container {
-    max-width: 1400px;
-    padding: 4rem;
-  }
-  
-  .logo-wrapper {
-    width: 180px;
-    height: 180px;
-  }
-}
-
-/* Extra Large Screens (Ultra-wide, TV) */
-@media (min-width: 2000px) {
-  html {
-    font-size: 20px;
-  }
-  
-  .main-container {
-    max-width: 1600px;
-    padding: 5rem;
-  }
-  
-  .logo-wrapper {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-/* Smartwatch & Very Small Screens */
-@media (max-width: 320px) and (max-height: 500px) {
-  .main-container {
-    padding: 0.75rem;
-    border-radius: var(--radius-md);
-  }
-  
-  .logo-section,
-  .social-section {
-    margin: 0.5rem 0;
-  }
-  
-  .content-section {
-    padding: 0.5rem 0;
-  }
-  
-  .logo-title {
-    font-size: 1.5rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.6rem;
-  }
-}
-
-/* Landscape Mode */
-@media (max-height: 600px) and (orientation: landscape) {
+@media (max-height: 700px) and (orientation: landscape) {
   .main-container {
     height: auto;
-    min-height: auto;
-    max-height: 95vh;
     overflow-y: auto;
-    padding: 1rem;
   }
-  
-  .logo-wrapper {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .logo-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-  }
-  
-  .logo-subtitle {
-    font-size: 0.6rem;
-  }
-  
-  .coming-soon-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .coming-soon-text {
-    margin-bottom: 1rem;
-    font-size: 0.8rem;
-  }
-  
-  .countdown-section {
-    margin: 0.5rem 0;
-  }
-  
-  .countdown-card {
-    padding: 0.5rem;
-  }
-  
-  .countdown-value {
-    font-size: 1.5rem;
-  }
+  .logo-wrapper { width: 60px; height: 60px; margin-bottom: 0.5rem; }
 }
 
-/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  
-  .logo-container,
-  .rocket-icon,
-  .gradient-mesh,
-  .animated-grid {
-    animation: none;
-  }
-}
-
-/* Dark/Light Mode */
-@media (prefers-color-scheme: light) {
-  :root {
-    --dark-blue: #f1f5f9;
-    --blue-medium: #e2e8f0;
-    --blue-light: #cbd5e1;
-    --white-dim: #0f172a;
-    --gray-light: #475569;
-    --gray-medium: #64748b;
-    --gray-dark: #94a3b8;
-  }
-  
-  body {
-    background: linear-gradient(135deg, 
-      var(--dark-blue) 0%, 
-      var(--blue-medium) 50%, 
-      var(--dark-blue) 100%);
-  }
-  
-  .main-container {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 
-      var(--shadow-hard),
-      0 0 0 1px rgba(0, 0, 0, 0.05),
-      inset 0 2px 10px rgba(0, 0, 0, 0.05);
-  }
-  
-  .gradient-mesh {
-    opacity: 0.08;
-  }
-  
-  .countdown-overlay {
-    background: rgba(255, 255, 255, 0.98);
-  }
+  .gradient-mesh, .animated-grid, .logo-glow { animation: none; }
 }
 </style>
 </head>
 <body>
-  <!-- Animated Background -->
   <div class="background-container">
     <div class="gradient-mesh"></div>
     <div class="animated-grid"></div>
     <div class="floating-particles" id="particles"></div>
   </div>
   
-  <!-- Countdown Overlay (Last 60 Seconds) -->
   <div class="countdown-overlay" id="countdownOverlay">
-    <div class="overlay-glow"></div>
     <div class="overlay-content">
       <h2 class="overlay-title">Launch Imminent!</h2>
       <div class="overlay-countdown" id="overlayCountdown">60</div>
@@ -1108,15 +666,13 @@ body {
     </div>
   </div>
   
-  <!-- Main Container -->
   <div class="main-container">
     
-    <!-- Logo Section -->
-    <div class="logo-section">
+    <div class="logo-section stagger-anim">
       <div class="logo-wrapper">
         <div class="logo-container">
           <img src="logo.svg" alt="Godam Logo" class="logo-img" 
-               onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23eab308%22/><text x=%2250%22 y=%2260%22 font-family=%22Montserrat%22 font-size=%2260%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>G</text></svg>'">
+               onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23eab308%22/><text x=%2250%22 y=%2260%22 font-family=%22sans-serif%22 font-size=%2260%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22>G</text></svg>'">
           <div class="logo-glow"></div>
         </div>
       </div>
@@ -1126,8 +682,7 @@ body {
       </div>
     </div>
     
-    <!-- Content Section -->
-    <div class="content-section">
+    <div class="content-section stagger-anim">
       <h2 class="coming-soon-title">
         <span class="title-text">Coming Soon</span>
         <span class="rocket-icon">🚀</span>
@@ -1138,8 +693,7 @@ body {
       </p>
     </div>
     
-    <!-- Countdown Section -->
-    <div class="countdown-section">
+    <div class="countdown-section stagger-anim">
       <h3 class="countdown-title">Launching in:</h3>
       <div class="countdown-grid">
         <div class="countdown-card">
@@ -1161,8 +715,7 @@ body {
       </div>
     </div>
     
-    <!-- Progress Section -->
-    <div class="progress-section">
+    <div class="progress-section stagger-anim">
       <div class="progress-header">
         <span class="progress-title">Development Progress</span>
         <span class="progress-percent">88%</span>
@@ -1172,49 +725,42 @@ body {
       </div>
     </div>
     
-    <!-- Social Section -->
-    <div class="social-section">
+    <div class="social-section stagger-anim">
       <h3 class="social-title">Stay Connected</h3>
       <div class="social-icons">
-        <a href="#" class="social-icon" aria-label="Twitter" title="Follow on Twitter">
+        <a href="#" class="social-icon" aria-label="Twitter">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="#" class="social-icon" aria-label="Facebook" title="Like on Facebook">
+        <a href="#" class="social-icon" aria-label="Facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="#" class="social-icon" aria-label="Instagram" title="Follow on Instagram">
+        <a href="#" class="social-icon" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="#" class="social-icon" aria-label="LinkedIn" title="Connect on LinkedIn">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="#" class="social-icon" aria-label="YouTube" title="Watch on YouTube">
+        <a href="#" class="social-icon" aria-label="YouTube">
           <i class="fab fa-youtube"></i>
-        </a>
-        <a href="#" class="social-icon" aria-label="Discord" title="Join Discord">
-          <i class="fab fa-discord"></i>
         </a>
       </div>
     </div>
     
-    <!-- Footer Section -->
-    <div class="footer-section">
+    <div class="footer-section stagger-anim">
       <p class="footer-text">
         © 2025 <span class="footer-highlight">GODAM</span> | Revolutionizing Commerce
-      </p>
-      <p class="footer-copyright">
-        All Rights Reserved • Built with Innovation
       </p>
     </div>
   </div>
 
   <script>
-    // ===== PARTICLE SYSTEM =====
+    // ===== PARTICLE SYSTEM (Optimized) =====
     class ParticleSystem {
       constructor() {
         this.container = document.getElementById('particles');
         this.particles = [];
-        this.maxParticles = Math.min(80, Math.floor(window.innerWidth / 15));
+        // Limit particles based on screen width for performance
+        this.maxParticles = Math.min(50, Math.floor(window.innerWidth / 20));
         this.init();
       }
       
@@ -1230,8 +776,8 @@ body {
         
         // Random properties
         const size = Math.random() * 3 + 1;
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100;
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
         const duration = Math.random() * 20 + 10;
         const delay = Math.random() * 5;
         const opacity = Math.random() * 0.4 + 0.1;
@@ -1240,21 +786,28 @@ body {
         particle.style.cssText = `
           width: ${size}px;
           height: ${size}px;
-          left: ${posX}%;
-          top: ${posY}%;
+          top: ${startY}%;
+          left: ${startX}%;
           opacity: ${opacity};
           animation: floatElement ${duration}s ease-in-out ${delay}s infinite;
         `;
         
         this.container.appendChild(particle);
-        this.particles.push(particle);
       }
     }
     
     // ===== COUNTDOWN TIMER =====
     class CountdownTimer {
       constructor() {
-        this.launchDate = new Date('2025-01-31T12:00:00+04:30'); // GMT+4:30
+        // --- CONFIGURATION ---
+        // CURRENT SETTING: Sets launch date to 3 days from now (so you can see it working)
+        // TO FIXED DATE: const targetDate = new Date('2025-02-01T00:00:00');
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 3); 
+        this.launchDate = targetDate;
+        
+        this.intervalId = null; // To stop the timer
+        
         this.elements = {
           days: document.getElementById('days'),
           hours: document.getElementById('hours'),
@@ -1265,13 +818,12 @@ body {
         };
         
         this.isLastMinute = false;
-        this.animationTimeout = null;
         this.init();
       }
       
       init() {
         this.update();
-        setInterval(() => this.update(), 1000);
+        this.intervalId = setInterval(() => this.update(), 1000);
       }
       
       update() {
@@ -1306,8 +858,6 @@ body {
         // Update overlay countdown if active
         if (this.isLastMinute) {
           this.elements.overlayCountdown.textContent = totalSeconds.toString().padStart(2, '0');
-          
-          // Special effects for last 10 seconds
           if (totalSeconds <= 10) {
             this.triggerSpecialEffects(totalSeconds);
           }
@@ -1316,151 +866,90 @@ body {
       
       updateElement(element, value) {
         const newValue = value.toString().padStart(2, '0');
-        
         if (element.textContent !== newValue) {
-          // Add animation
-          element.style.animation = 'none';
-          setTimeout(() => {
-            element.style.animation = 'countdownPop 0.3s ease';
-          }, 10);
-          
           element.textContent = newValue;
+          // Simple animation trigger
+          element.style.animation = 'none';
+          element.offsetHeight; /* trigger reflow */
+          element.style.animation = 'countdownPop 0.3s ease';
         }
       }
       
       activateOverlay() {
         this.elements.overlay.classList.add('active');
-        
-        // Create particle explosion effect
-        this.createLaunchParticles();
-      }
-      
-      createLaunchParticles() {
-        const particles = 50;
-        const overlay = this.elements.overlay;
-        
-        for (let i = 0; i < particles; i++) {
-          const particle = document.createElement('div');
-          particle.className = 'particle';
-          
-          // Random position
-          const size = Math.random() * 10 + 5;
-          const posX = 50 + (Math.random() - 0.5) * 100;
-          const posY = 50 + (Math.random() - 0.5) * 100;
-          
-          // Random movement
-          const tx = (Math.random() - 0.5) * 200;
-          const ty = (Math.random() - 0.5) * 200;
-          
-          particle.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${posX}%;
-            top: ${posY}%;
-            background: var(--primary-yellow);
-            border-radius: 50%;
-            opacity: 0.8;
-            --tx: ${tx}px;
-            --ty: ${ty}px;
-            animation: particleExplode 1.5s ease-out forwards;
-          `;
-          
-          overlay.appendChild(particle);
-          
-          // Remove after animation
-          setTimeout(() => particle.remove(), 1500);
-        }
       }
       
       triggerSpecialEffects(secondsLeft) {
-        // Change overlay background gradient based on seconds left
-        const overlay = this.elements.overlay;
-        const intensity = (11 - secondsLeft) / 10; // 0.1 to 1.0
-        
-        overlay.style.background = `
-          radial-gradient(
-            circle at center,
-            rgba(234, 179, 8, ${0.3 + intensity * 0.7}) 0%,
-            rgba(15, 23, 42, ${0.98 - intensity * 0.3}) 100%
-          )
-        `;
-        
-        // Scale overlay countdown
-        const scale = 1 + (intensity * 0.5);
-        this.elements.overlayCountdown.style.transform = `scale(${scale})`;
-        
-        // Add shake effect for last 5 seconds
-        if (secondsLeft <= 5) {
-          overlay.style.animation = `pulseSoft ${0.5 / secondsLeft}s infinite`;
-        }
+        // Pulse effect for last 10 seconds
+        this.elements.overlayCountdown.style.color = (secondsLeft % 2 === 0) ? '#eab308' : '#ffffff';
+        this.elements.overlayCountdown.style.transform = `scale(${1 + (10 - secondsLeft) * 0.05})`;
       }
       
       handleLaunch() {
+        // Clear interval to stop memory leak
+        if (this.intervalId) clearInterval(this.intervalId);
+
         // Update UI for launch
         document.querySelector('.coming-soon-title').innerHTML = `
           <span class="title-text">We're Live!</span>
           <span class="rocket-icon">🎉</span>
         `;
         document.querySelector('.coming-soon-text').textContent = 
-          'Godam Marketplace is now live! Experience the future of commerce.';
-        document.querySelector('.countdown-title').textContent = 'Launch Successful!';
-        document.querySelector('.progress-percent').textContent = '100%';
-        document.querySelector('.progress-bar-fill').style.width = '100%';
+          'Godam Marketplace is now live! Refresh to enter.';
         
         // Hide countdown overlay
         this.elements.overlay.classList.remove('active');
         
         // Set all countdown values to 00
-        this.elements.days.textContent = '00';
-        this.elements.hours.textContent = '00';
-        this.elements.minutes.textContent = '00';
-        this.elements.seconds.textContent = '00';
+        ['days', 'hours', 'minutes', 'seconds'].forEach(id => {
+            this.elements[id].textContent = "00";
+        });
+
+        // Set progress bar to 100%
+        document.querySelector('.progress-percent').textContent = '100%';
+        document.querySelector('.progress-bar-fill').style.width = '100%';
         
-        // Trigger confetti effect
         this.createConfetti();
       }
       
       createConfetti() {
-        const confettiCount = 150;
-        const colors = ['#eab308', '#facc15', '#fde047', '#ffffff'];
+        // Simple confetti spawner
+        const confettiCount = 100;
+        const colors = ['#eab308', '#ffffff', '#facc15'];
         
         for (let i = 0; i < confettiCount; i++) {
-          const confetti = document.createElement('div');
-          const color = colors[Math.floor(Math.random() * colors.length)];
-          const size = Math.random() * 10 + 5;
-          const posX = Math.random() * 100;
-          const duration = Math.random() * 3 + 2;
-          const delay = Math.random() * 1;
-          
-          confetti.style.cssText = `
-            position: fixed;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${posX}%;
-            top: -20px;
-            background: ${color};
-            border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
-            opacity: 0.8;
-            z-index: 9999;
-            animation: confettiFall ${duration}s ease-in ${delay}s forwards;
-          `;
-          
-          document.body.appendChild(confetti);
-          
-          // Remove after animation
-          setTimeout(() => confetti.remove(), (duration + delay) * 1000);
+          setTimeout(() => {
+            const confetti = document.createElement('div');
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const size = Math.random() * 8 + 4;
+            const left = Math.random() * 100;
+            
+            confetti.style.cssText = `
+              position: fixed;
+              top: -20px;
+              left: ${left}%;
+              width: ${size}px;
+              height: ${size}px;
+              background: ${color};
+              border-radius: 50%;
+              z-index: 2000;
+              pointer-events: none;
+              animation: confettiDrop ${Math.random() * 2 + 2}s linear forwards;
+            `;
+            
+            document.body.appendChild(confetti);
+            // Cleanup
+            setTimeout(() => confetti.remove(), 4000);
+          }, i * 20);
         }
         
-        // Add CSS for confetti animation
-        const style = document.createElement('style');
-        style.textContent = `
-          @keyframes confettiFall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-          }
-        `;
-        document.head.appendChild(style);
+        // Add style for confetti if not exists
+        if(!document.getElementById('confetti-style')) {
+            const style = document.createElement('style');
+            style.id = 'confetti-style';
+            style.textContent = `@keyframes confettiDrop { to { transform: translateY(100vh) rotate(720deg); opacity: 0; } }`;
+            document.head.appendChild(style);
+        }
       }
     }
     
@@ -1471,157 +960,51 @@ body {
       }
       
       init() {
-        // Staggered entrance animation
-        this.staggerEntrance();
-        
-        // Hover effects
-        this.initHoverEffects();
-        
-        // Responsive adjustments
-        this.handleResponsive();
-        
-        // Window resize optimization
-        this.initResizeHandler();
+        this.revealContent();
+        this.animateProgressBar();
       }
       
-      staggerEntrance() {
-        const elements = [
-          '.logo-section',
-          '.content-section',
-          '.countdown-section',
-          '.progress-section',
-          '.social-section',
-          '.footer-section'
-        ];
+      revealContent() {
+        const container = document.querySelector('.main-container');
+        const elements = document.querySelectorAll('.stagger-anim');
         
-        elements.forEach((selector, index) => {
-          const element = document.querySelector(selector);
-          if (element) {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
+        // 1. Reveal Body
+        document.body.classList.add('loaded');
+        
+        // 2. Reveal Container
+        setTimeout(() => {
+          container.classList.add('visible');
+        }, 100);
+
+        // 3. Stagger children
+        elements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             
             setTimeout(() => {
-              element.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
-              element.style.opacity = '1';
-              element.style.transform = 'translateY(0)';
-            }, index * 150 + 300);
-          }
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, 300 + (index * 150));
         });
       }
-      
-      initHoverEffects() {
-        // Countdown card hover
-        document.querySelectorAll('.countdown-card').forEach(card => {
-          card.addEventListener('mouseenter', (e) => {
-            card.style.transform = 'translateY(-5px)';
-          });
-          
-          card.addEventListener('mouseleave', (e) => {
-            card.style.transform = 'translateY(0)';
-          });
-        });
-        
-        // Social icon hover
-        document.querySelectorAll('.social-icon').forEach(icon => {
-          icon.addEventListener('mouseenter', (e) => {
-            icon.style.transform = 'translateY(-3px) scale(1.1)';
-          });
-          
-          icon.addEventListener('mouseleave', (e) => {
-            icon.style.transform = 'translateY(0) scale(1)';
-          });
-        });
-      }
-      
-      handleResponsive() {
-        const container = document.querySelector('.main-container');
-        const windowHeight = window.innerHeight;
-        
-        if (windowHeight < 700) {
-          container.style.height = 'auto';
-          container.style.minHeight = '95vh';
-        } else {
-          container.style.height = 'min(90vh, 900px)';
-        }
-      }
-      
-      initResizeHandler() {
-        let resizeTimeout;
-        
-        window.addEventListener('resize', () => {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(() => {
-            this.handleResponsive();
-          }, 250);
-        });
+
+      animateProgressBar() {
+        // Trigger progress bar fill after load
+        setTimeout(() => {
+            const bar = document.querySelector('.progress-bar-fill');
+            if(bar) bar.style.width = '88%';
+        }, 1000);
       }
     }
     
-    // ===== INITIALIZE EVERYTHING =====
+    // ===== INITIALIZATION =====
     document.addEventListener('DOMContentLoaded', () => {
-      // Initialize particle system
       new ParticleSystem();
-      
-      // Initialize countdown timer
       new CountdownTimer();
-      
-      // Initialize page animations
       new PageAnimations();
-      
-      // Performance optimization
-      this.handlePerformance();
     });
-    
-    // ===== PERFORMANCE OPTIMIZATION =====
-    function handlePerformance() {
-      // Use requestAnimationFrame for smoother animations
-      let lastTime = 0;
-      
-      function animate(time) {
-        const deltaTime = time - lastTime;
-        lastTime = time;
-        
-        // Update animations here if needed
-        
-        requestAnimationFrame(animate);
-      }
-      
-      requestAnimationFrame(animate);
-      
-      // Handle page visibility
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          // Page is hidden - reduce animations
-        } else {
-          // Page is visible - resume normal operation
-        }
-      });
-      
-      // Preload critical assets
-      const preloadAssets = [
-        'logo.svg',
-        'favicon.ico',
-        'apple-touch-icon.png'
-      ];
-      
-      preloadAssets.forEach(asset => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.href = asset;
-        link.as = asset.endsWith('.svg') ? 'image' : 'fetch';
-        document.head.appendChild(link);
-      });
-    }
-    
-    // ===== SMOOTH LOADING TRANSITION =====
-    window.addEventListener('load', () => {
-      document.body.style.opacity = '0';
-      document.body.style.transition = 'opacity 0.5s ease';
-      
-      setTimeout(() => {
-        document.body.style.opacity = '1';
-      }, 100);
-    });
+
   </script>
 </body>
 </html>
