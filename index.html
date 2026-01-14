@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-NP" prefix="og: https://ogp.me/ns#">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Godam Nepal | Nepal's Revolutionary Online Marketplace & Ecommerce Platform</title>
-    <meta name="description" content="Buy and sell new and used items easily on Godam Nepal - Nepal's trusted online marketplace. Find gadgets, fashion, home goods and more with secure storage & delivery.">
-    <meta name="keywords" content="online marketplace Nepal, buy online Nepal, sell online Nepal, Nepali ecommerce, Nepal eBay, gadgets Nepal, fashion Nepal">
+    <meta name="description"
+        content="Buy and sell new and used items easily on Godam Nepal - Nepal's trusted online marketplace. Find gadgets, fashion, home goods and more with secure storage & delivery.">
+    <meta name="keywords"
+        content="online marketplace Nepal, buy online Nepal, sell online Nepal, Nepali ecommerce, Nepal eBay, gadgets Nepal, fashion Nepal">
     <meta name="author" content="Godam Nepal">
-    <meta name="theme-color" content="#e0a800">
+    <meta name="theme-color" content="#0a1120">
     <meta name="google-adsense-account" content="ca-pub-2778216399702742">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Godam Nepal | Nepal's Online Marketplace">
-    <meta property="og:description" content="Nepal's trusted platform to buy and sell everything. Simple, fast, and accessible for everyone.">
+    <meta property="og:description"
+        content="Nepal's trusted platform to buy and sell everything. Simple, fast, and accessible for everyone.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://godamnepal.com.np/">
     <meta property="og:image" content="https://godamnepal.com.np/logo-og.jpg">
@@ -21,194 +25,15 @@
     <link rel="canonical" href="https://godamnepal.com.np/">
 
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Main Styles -->
-    <style>
-        /* ===== CSS RESET & CUSTOM PROPERTIES ===== */
-        :root {
-            --primary-yellow: #e0a800;
-            --yellow-light: #f4c000;
-            --dark-blue: #0a1120;
-            --blue-medium: #141e35;
-            --white: #ffffff;
-            --white-dim: #f0f4f8;
-            --gray-light: #d1d9e6;
-            --gray-medium: #8a9bb8;
-            --gray-dark: #4a5a7a;
-            --shadow-hard: 0 8px 30px rgba(0, 0, 0, 0.2);
-            --radius-xl: 32px;
-            --container-max: 1200px;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 20px; }
-
-        /* ===== HEADER & NAVIGATION ===== */
-        header {
-            background-color: var(--dark-blue);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: sticky; top: 0; z-index: 1000;
-        }
-        .header-container {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1rem 0;
-        }
-        .logo-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem; font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-yellow), var(--yellow-light));
-            -webkit-background-clip: text; background-clip: text;
-            color: transparent;
-        }
-        .logo-subtitle {
-            font-size: 0.7rem; letter-spacing: 0.25em;
-            color: var(--gray-medium); text-transform: uppercase;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        nav a {
-            color: var(--white-dim);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.5rem 0;
-            position: relative;
-            transition: color 0.3s;
-        }
-        nav a:hover, nav a.active { color: var(--primary-yellow); }
-        nav a::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 0; height: 2px;
-            background: var(--primary-yellow);
-            transition: width 0.3s;
-        }
-        nav a:hover::after { width: 100%; }
-        .mobile-menu-btn { display: none; font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer; }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            background: linear-gradient(rgba(10, 17, 32, 0.9), rgba(10, 17, 32, 0.95)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770');
-            background-size: cover; background-position: center;
-            color: white; text-align: center;
-            padding: 6rem 2rem;
-            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-            margin-bottom: 3rem;
-        }
-        .hero h1 {
-            font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--primary-yellow), #ffdd44);
-            -webkit-background-clip: text; background-clip: text;
-            color: transparent;
-        }
-        .hero p {
-            font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;
-            color: var(--gray-light);
-        }
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-yellow), var(--yellow-light));
-            color: var(--dark-blue); padding: 1rem 2.5rem;
-            border-radius: 50px; text-decoration: none;
-            font-weight: 700; font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(224, 168, 0, 0.4);
-        }
-
-        /* ===== CONTENT SECTIONS ===== */
-        .section-title {
-            text-align: center; font-size: 2.5rem;
-            color: var(--dark-blue); margin-bottom: 3rem;
-            position: relative;
-        }
-        .section-title::after {
-            content: ''; display: block; width: 80px; height: 4px;
-            background: var(--primary-yellow); margin: 10px auto;
-            border-radius: 2px;
-        }
-        .features-grid, .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem; margin-bottom: 4rem;
-        }
-        .feature-card, .category-card {
-            background: white; padding: 2rem;
-            border-radius: 20px; box-shadow: var(--shadow-soft);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-        .feature-card:hover, .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-        .feature-icon, .category-icon {
-            font-size: 2.5rem; color: var(--primary-yellow);
-            margin-bottom: 1rem;
-        }
-
-        /* ===== ABOUT PREVIEW ===== */
-        .about-preview {
-            background-color: var(--dark-blue); color: white;
-            padding: 4rem 2rem; border-radius: var(--radius-xl);
-            margin: 4rem 0;
-        }
-        .about-preview h2 { color: var(--primary-yellow); }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background-color: var(--dark-blue); color: var(--gray-medium);
-            padding: 3rem 0 1.5rem; margin-top: 4rem;
-        }
-        .footer-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem; margin-bottom: 2rem;
-        }
-        .footer-logo .logo-title { font-size: 2rem; }
-        .footer-links h3, .footer-contact h3 {
-            color: var(--white-dim); margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        .footer-links ul { list-style: none; }
-        .footer-links a {
-            color: var(--gray-medium); text-decoration: none;
-            display: block; padding: 0.3rem 0;
-            transition: color 0.3s;
-        }
-        .footer-links a:hover { color: var(--primary-yellow); }
-        .copyright {
-            text-align: center; padding-top: 1.5rem;
-            border-top: 1px solid var(--blue-medium);
-            font-size: 0.9rem; color: var(--gray-dark);
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1rem; }
-            nav ul {
-                display: none; flex-direction: column;
-                position: absolute; top: 100%; left: 0;
-                width: 100%; background: var(--dark-blue);
-                padding: 1rem; box-shadow: var(--shadow-hard);
-            }
-            nav ul.active { display: flex; }
-            .mobile-menu-btn { display: block; }
-            .features-grid, .categories-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
     <!-- HEADER & NAVIGATION -->
     <header>
@@ -217,15 +42,15 @@
                 <div class="logo-title">GODAM NEPAL</div>
                 <div class="logo-subtitle">ONLINE MARKETPLACE</div>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu"><i
+                    class="fas fa-bars"></i></button>
             <nav>
                 <ul id="mainNav">
                     <li><a href="/" class="active">Home</a></li>
-                    <li><a href="/products/">Browse Products</a></li>
-                    <li><a href="/blog/">Blog & Guides</a></li>
-                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/about.html">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
                 </ul>
             </nav>
         </div>
@@ -233,144 +58,158 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <div class="container">
-            <h1>Welcome to Nepal's Digital Marketplace</h1>
-            <p>GODAM is a Nepal-based online marketplace built to make buying and selling simple, fast, and accessible for everyone. Buy, sell, or store items with trusted local delivery.</p>
-            <a href="/products/" class="cta-button">Start Exploring <i class="fas fa-arrow-right"></i></a>
+        <div class="container animate-up">
+            <h1>Nepal's Next-Gen Marketplace</h1>
+            <p>Built for the people, by the people. Buy, sell, and store items with ease on Godam Nepal - the fastest
+                growing digital marketplace in the Himalayas.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/products.html" class="cta-button">Browse Marketplace <i class="fas fa-shopping-bag"></i></a>
+                <a href="/about.html" class="cta-button"
+                    style="background: var(--glass); color: white; border: 1px solid var(--glass-border); box-shadow: none;">Our
+                    Vision</a>
+            </div>
         </div>
     </section>
 
-    <main class="container">
+    <main>
         <!-- FEATURED CATEGORIES -->
-        <section class="categories">
-            <h2 class="section-title">Shop by Category</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Electronics & Gadgets</h3>
-                    <p>Find smartphones, laptops, accessories and more from trusted sellers.</p>
-                    <a href="/categories/electronics/">Browse Now</a>
+        <section class="categories container">
+            <h2 class="section-title">Explore Categories</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Gadgets & Electronics</h3>
+                    <p>Upgrade your tech game with the latest smartphones and accessories from verified sellers.</p>
+                    <a href="/products.html?category=electronics" class="cta-button"
+                        style="padding: 0.5rem 1.5rem; font-size: 0.9rem; margin-top: 1.5rem;">Explore</a>
                 </div>
-                <div class="category-card">
-                    <div class="category-icon"><i class="fas fa-tshirt"></i></div>
-                    <h3>Fashion & Lifestyle</h3>
-                    <p>Discover clothing, footwear, watches and jewelry for every style.</p>
-                    <a href="/categories/fashion/">Browse Now</a>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Modern Fashion</h3>
+                    <p>Stay ahead of the trends with curated fashion pieces for every occasion and style preference.</p>
+                    <a href="/products.html?category=fashion" class="cta-button"
+                        style="padding: 0.5rem 1.5rem; font-size: 0.9rem; margin-top: 1.5rem;">Explore</a>
                 </div>
-                <div class="category-card">
-                    <div class="category-icon"><i class="fas fa-home"></i></div>
-                    <h3>Home & Living</h3>
-                    <p>Furniture, kitchenware, decor and appliances for your home.</p>
-                    <a href="/categories/home/">Browse Now</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- KEY FEATURES -->
-        <section class="features">
-            <h2 class="section-title">Why Choose Godam?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Safe & Secure Trading</h3>
-                    <p>Our platform is built with trust and security as the foundation for every transaction.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
-                    <h3>Reliable Delivery</h3>
-                    <p>Affordable and dependable delivery solutions across Nepal.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-store"></i></div>
-                    <h3>Digital Storage Solutions</h3>
-                    <p>Need storage? GODAM offers secure, affordable storage for your items.</p>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-home"></i></div>
+                    <h3>Home & Decor</h3>
+                    <p>Transform your living space with beautiful furniture and unique handmade Nepali decor items.</p>
+                    <a href="/products.html?category=home" class="cta-button"
+                        style="padding: 0.5rem 1.5rem; font-size: 0.9rem; margin-top: 1.5rem;">Explore</a>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT PREVIEW -->
-        <section class="about-preview">
-            <h2 class="section-title">The GODAM Vision</h2>
-            <p>Inspired by the Nepali word "Godam," meaning storage hall, our platform represents a digital space where all kinds of products can be stored, showcased, and traded with ease. Envisioned as Nepal's own version of popular global marketplaces, GODAM connects individuals and businesses on one trusted platform.</p>
-            <p>By combining modern technology, trust, and convenience, GODAM empowers local sellers, supports small businesses, and transforms online trading into a safe, seamless, and rewarding experience for users across Nepal.</p>
-            <a href="/about.html" class="cta-button" style="background: white; color: var(--dark-blue); margin-top: 2rem;">Read Our Full Story</a>
+        <!-- MISSION SECTION -->
+        <section class="container animate-up">
+            <div class="glass-panel" style="padding: 4rem; text-align: center;">
+                <h2 style="color: var(--primary); margin-bottom: 2rem;">Our Digital Warehouse</h2>
+                <p style="font-size: 1.25rem; max-width: 900px; margin: 0 auto; line-height: 1.8; opacity: 0.9;">
+                    GODAM is a Nepal-based online marketplace built to make buying and selling simple, fast, and
+                    accessible for everyone. Inspired by the Nepali word “Godam,” meaning storage hall, the platform
+                    represents a digital space where all kinds of products can be stored, showcased, and traded with
+                    ease.
+                </p>
+                <p style="font-size: 1.1rem; max-width: 900px; margin: 2rem auto 0; line-height: 1.8; opacity: 0.7;">
+                    Envisioned as Nepal’s own version of eBay, GODAM connects individuals and businesses on one trusted
+                    platform, enabling users to buy and sell both new and used items—ranging from gadgets and fashion to
+                    accessories and home goods. Beyond just a marketplace, GODAM also aims to provide affordable storage
+                    and reliable delivery solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- VISION BRANDING -->
+
+        <!-- TRUST FEATURES -->
+        <section class="container">
+            <h2 class="section-title">Built on Trust</h2>
+            <div class="grid">
+                <div class="card" style="padding: 2rem;">
+                    <i class="fas fa-shield-halved card-icon" style="font-size: 2rem;"></i>
+                    <h3>Escrow Security</h3>
+                    <p>Your funds are safe with us until you confirm receipt of the item in described condition.</p>
+                </div>
+                <div class="card" style="padding: 2rem;">
+                    <i class="fas fa-truck-bolt card-icon" style="font-size: 2rem;"></i>
+                    <h3>Hyper-Local Delivery</h3>
+                    <p>Network of local couriers ensuring the fastest delivery times across major Nepali cities.</p>
+                </div>
+                <div class="card" style="padding: 2rem;">
+                    <i class="fas fa-box-open card-icon" style="font-size: 2rem;"></i>
+                    <h3>Flexible Storage</h3>
+                    <p>Our "Godam" units provide professional warehousing for individual sellers at low rates.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- FOOTER -->
     <footer>
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <div class="logo-title">GODAM NEPAL</div>
-                <p>Nepal's Revolutionary Online Marketplace</p>
-                <div class="social-icons" style="margin-top: 1rem;">
-                    <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-title">GODAM NEPAL</div>
+                    <p>Empowering local commerce through technology and trust. Nepal's premier digital marketplace.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Marketplace</h3>
+                    <ul>
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html?filter=trending">Trending Now</a></li>
+                        <li><a href="/products.html?filter=new">New Arrivals</a></li>
+                        <li><a href="/contact.html">Sell with Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Careers</a></li>
+                        <li><a href="/contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/refund-policy.html">Refund Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products/">All Products</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                    <li><a href="/refund-policy.html">Return Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> info@godamnepal.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
-            </div>
-        </div>
-        <div class="container">
-            <p class="copyright">© <span id="currentYear">2026</span> GODAM NEPAL. All rights reserved. Revolutionizing Ecommerce in Nepal.</p>
+            <p class="copyright">© <span id="year">2026</span> Godam Nepal. All rights reserved. Built for Nepal with ❤️
+            </p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
     <script>
-        // Mobile Menu Toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('mainNav').classList.toggle('active');
-        });
+        // Mobile Menu
+        const btn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('mainNav');
+        btn.addEventListener('click', () => nav.classList.toggle('active'));
 
-        // Update Copyright Year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Year
+        document.getElementById('year').innerText = new Date().getFullYear();
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-up');
                 }
             });
-        });
-    </script>
+        }, { threshold: 0.1 });
 
-    <!-- PLACEHOLDER FOR ADSENSE AD CODE -->
-    <!-- 
-    Once your site is live with more content, you can place approved AdSense code here.
-    Example format:
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2778216399702742" crossorigin="anonymous"></script>
-    -->
+        document.querySelectorAll('section, .card').forEach(s => observer.observe(s));
+    </script>
 </body>
+
 </html>

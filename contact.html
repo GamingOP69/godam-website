@@ -1,134 +1,216 @@
 <!DOCTYPE html>
 <html lang="en-NP">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Godam Nepal | Get in Touch</title>
-    <meta name="description" content="Have questions? Reach out to the Godam Nepal team. We're here to help buyers, sellers, and partners.">
-    <!-- STYLES & FONTS (Use the same <head> section as index.html) -->
+    <meta name="google-adsense-account" content="ca-pub-2778216399702742">
+    <meta name="description"
+        content="Have questions? Reach out to the Godam Nepal team. We're here to help buyers, sellers, and partners.">
+    <link rel="canonical" href="https://godamnepal.com.np/contact.html">
+    <meta property="og:title" content="Contact Godam Nepal | Support">
+    <meta property="og:url" content="https://godamnepal.com.np/contact.html">
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
-    <!-- HEADER & NAVIGATION (Copy from index.html, mark 'Contact' as active) -->
-
-    <main class="container" style="padding: 4rem 2rem;">
-        <h1 class="section-title">Get in Touch</h1>
-        <p style="text-align: center; margin-bottom: 3rem; color: var(--gray-medium);">We'd love to hear from you. Send us a message or use our contact details below.</p>
-
-        <div class="contact-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; max-width: 1100px; margin: 0 auto;">
-            <!-- CONTACT FORM -->
-            <div class="contact-form">
-                <h2>Send a Message</h2>
-                <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject" name="subject" style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
-                            <option value="general">General Inquiry</option>
-                            <option value="seller">Become a Seller</option>
-                            <option value="support">Customer Support</option>
-                            <option value="business">Business Partnership</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;"></textarea>
-                    </div>
-                    <button type="submit" class="cta-button" style="align-self: flex-start;">Send Message</button>
-                </form>
-                <p id="formResponse" style="margin-top: 1rem;"></p>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-title">GODAM NEPAL</div>
+                <div class="logo-subtitle">ONLINE MARKETPLACE</div>
             </div>
-
-            <!-- CONTACT INFO -->
-            <div class="contact-info">
-                <h2>Other Ways to Reach Us</h2>
-                <div class="info-card" style="margin: 2rem 0;">
-                    <h3><i class="fas fa-envelope"></i> Email</h3>
-                    <p>For general inquiries: <strong>info@godamnepal.com</strong></p>
-                    <p>For seller support: <strong>sellers@godamnepal.com</strong></p>
-                </div>
-                <div class="info-card" style="margin: 2rem 0;">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-                    <p><strong>Godam Nepal Headquarters</strong></p>
-                    <p>Kathmandu, Nepal</p>
-                    <!-- Consider adding a static map image or embed later -->
-                </div>
-                <div class="info-card" style="margin: 2rem 0;">
-                    <h3><i class="fas fa-clock"></i> Business Hours</h3>
-                    <p>Sunday - Friday: 9:00 AM - 6:00 PM NPT</p>
-                    <p>Saturday: Closed</p>
-                </div>
-                <div class="social-links" style="margin-top: 3rem;">
-                    <h3>Follow Our Journey</h3>
-                    <div style="display: flex; gap: 1rem; font-size: 1.5rem; margin-top: 1rem;">
-                        <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu"><i
+                    class="fas fa-bars"></i></button>
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding: 6rem 0;">
+            <div class="container animate-up">
+                <h1>Get in Touch</h1>
+                <p>Have questions or need support? Our team is here to help you navigate Godam.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 4rem 2rem;">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; max-width: 1100px; margin: 0 auto;">
+
+                <!-- CONTACT FORM -->
+                <div class="animate-up">
+                    <h2 class="section-title" style="text-align: left; font-size: 2rem; margin-bottom: 2rem;">Send a
+                        Message</h2>
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; opacity: 0.8;">Full
+                                    Name</label>
+                                <input type="text" required
+                                    style="width: 100%; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid #ddd; background: white;">
+                            </div>
+                            <div>
+                                <label
+                                    style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; opacity: 0.8;">Email
+                                    Address</label>
+                                <input type="email" required
+                                    style="width: 100%; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid #ddd; background: white;">
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; opacity: 0.8;">Subject</label>
+                            <select
+                                style="width: 100%; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid #ddd; background: white;">
+                                <option>General Inquiry</option>
+                                <option>Seller Support</option>
+                                <option>Logistics & Storage</option>
+                                <option>Business Partnership</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label
+                                style="display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; opacity: 0.8;">Your
+                                Message</label>
+                            <textarea rows="5" required
+                                style="width: 100%; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid #ddd; background: white; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="justify-content: center;">Send Message <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div id="formResponse" style="margin-top: 2rem; border-radius: var(--radius-sm);"></div>
+                </div>
+
+                <!-- INFO CARDS -->
+                <div class="animate-up">
+                    <h2 class="section-title" style="text-align: left; font-size: 2rem; margin-bottom: 2rem;">Quick
+                        Connect</h2>
+
+                    <div class="card" style="text-align: left; padding: 2rem; margin-bottom: 2rem;">
+                        <h3 style="color: var(--primary); font-size: 1.25rem;"><i class="fas fa-envelope"
+                                style="margin-right: 0.75rem;"></i> Write to Us</h3>
+                        <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8;">For all inquiries:
+                            <br><strong>info@godamnepal.com</strong>
+                        </p>
+                        <p style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.8;">Seller verification:
+                            <br><strong>sellers@godamnepal.com</strong>
+                        </p>
+                    </div>
+
+                    <div class="card" style="text-align: left; padding: 2rem; margin-bottom: 2rem;">
+                        <h3 style="color: var(--primary); font-size: 1.25rem;"><i class="fas fa-map-marker-alt"
+                                style="margin-right: 0.75rem;"></i> Location</h3>
+                        <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8;">Godam Nepal HQ<br>Kathmandu,
+                            Nepal</p>
+                    </div>
+
+                    <div class="glass-panel" style="padding: 2rem; background: var(--secondary); color: white;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Operating Hours</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">Sunday to Friday: <br>9:00 AM — 6:00 PM (NPT)</p>
+                        <div class="social-links" style="margin-top: 2rem;">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER (Copy from index.html) -->
+    <!-- FOOTER -->
     <footer>
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <div class="logo-title">GODAM NEPAL</div>
-                <p>Nepal's Revolutionary Online Marketplace</p>
-                <div class="social-icons" style="margin-top: 1rem;">
-                    <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-title">GODAM NEPAL</div>
+                    <p>Empowering local commerce through technology and trust. Nepal's premier digital marketplace.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Marketplace</h3>
+                    <ul>
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html?filter=trending">Trending Now</a></li>
+                        <li><a href="/products.html?filter=new">New Arrivals</a></li>
+                        <li><a href="/contact.html">Sell with Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Careers</a></li>
+                        <li><a href="/contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/refund-policy.html">Refund Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products/">All Products</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                    <li><a href="/refund-policy.html">Return Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> info@godamnepal.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
-            </div>
-        </div>
-        <div class="container">
-            <p class="copyright">© <span id="currentYear">2026</span> GODAM NEPAL. All rights reserved. Revolutionizing Ecommerce in Nepal.</p>
+            <p class="copyright">© <span id="year">2026</span> Godam Nepal. All rights reserved. Built for Nepal with ❤️
+            </p>
         </div>
     </footer>
 
     <script>
-        // Basic Form Handling (for demonstration)
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const responseElement = document.getElementById('formResponse');
-            // In a real setup, this would connect to a server
-            responseElement.innerHTML = '<p style="color: green; font-weight: bold;">Thank you! Your message has been received. We will get back to you soon.</p>';
-            responseElement.style.color = 'green';
-            this.reset(); // Clear the form
+        const btn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('mainNav');
+        btn.addEventListener('click', () => nav.classList.toggle('active'));
+
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const res = document.getElementById('formResponse');
+            res.innerHTML = '<div style="padding: 1.5rem; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 8px;"><b>Message Sent!</b> We will get back to you within 24 hours.</div>';
+            form.reset();
         });
+
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .card, .glass-panel').forEach(s => observer.observe(s));
     </script>
 </body>
+
 </html>

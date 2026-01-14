@@ -1,118 +1,194 @@
 <!DOCTYPE html>
 <html lang="en-NP">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-2778216399702742">
     <title>About Godam Nepal | Nepal's Trusted Online Marketplace</title>
-    <meta name="description" content="Learn the story of Godam Nepal, our mission to revolutionize ecommerce in Nepal, and our vision to connect buyers and sellers safely.">
-    <!-- STYLES & FONTS (Use the same <head> section as index.html) -->
-    <!-- IMPORTANT: For brevity, the full <head> with styles is omitted. You must copy the entire <style> block from your index.html into this page. -->
+    <meta name="description"
+        content="Learn the story of Godam Nepal, our mission to revolutionize ecommerce in Nepal, and our vision to connect buyers and sellers safely.">
+    <link rel="canonical" href="https://godamnepal.com.np/about.html">
+    <meta property="og:title" content="About Godam Nepal | Our Story">
+    <meta property="og:url" content="https://godamnepal.com.np/about.html">
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
-    <!-- HEADER & NAVIGATION (Copy from index.html) -->
+    <!-- HEADER & NAVIGATION -->
     <header>
         <div class="container header-container">
             <div class="logo">
                 <div class="logo-title">GODAM NEPAL</div>
                 <div class="logo-subtitle">ONLINE MARKETPLACE</div>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu"><i
+                    class="fas fa-bars"></i></button>
             <nav>
-                <ul>
+                <ul id="mainNav">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/products/">Browse Products</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about.html" class="active">About Us</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/about.html" class="active">About</a></li>
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container" style="padding: 4rem 2rem;">
-        <section class="page-hero">
-            <h1>Our Story: Building Nepal's Digital Marketplace</h1>
-            <p>Inspired by a simple word, built for an entire nation.</p>
+    <main>
+        <section class="hero" style="padding: 8rem 0;">
+            <div class="container animate-up">
+                <h1>Our Story</h1>
+                <p>Inspired by the Nepali word for storage, built for the future of digital commerce.</p>
+            </div>
         </section>
 
-        <section class="about-content" style="max-width: 900px; margin: 0 auto;">
-            <div class="about-section">
-                <h2>What Does "Godam" Mean?</h2>
-                <p>GODAM is a Nepal-based online marketplace built to make buying and selling simple, fast, and accessible for everyone. Inspired by the Nepali word “Godam,” meaning storage hall, the platform represents a digital space where all kinds of products can be stored, showcased, and traded with ease.</p>
-            </div>
+        <section class="container" style="padding: 4rem 2rem;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 class="section-title">What is Godam?</h2>
+                <p style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.9;">
+                    GODAM is a Nepal-based online marketplace built to make buying and selling simple, fast, and
+                    accessible for everyone. Inspired by the Nepali word “Godam,” meaning storage hall, the platform
+                    represents a digital space where all kinds of products can be stored, showcased, and traded with
+                    ease.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; opacity: 0.7;">
+                    Envisioned as Nepal’s own version of eBay, GODAM connects individuals and businesses on one trusted
+                    platform, enabling users to buy and sell both new and used items—ranging from gadgets and fashion to
+                    accessories and home goods. Beyond just a marketplace, GODAM also aims to provide affordable storage
+                    and reliable delivery solutions. By combining modern technology, trust, and convenience, GODAM
+                    empowers local sellers, supports small businesses, and transforms online trading into a safe,
+                    seamless, and rewarding experience for users across Nepal.
+                </p>
 
-            <div class="about-section">
-                <h2>Our Vision & Mission</h2>
-                <p>Envisioned as Nepal’s own version of trusted global marketplaces, GODAM connects individuals and businesses on one platform, enabling users to buy and sell both new and used items—ranging from electronics and fashion to home goods and beyond.</p>
-                <p>Beyond just a marketplace, GODAM also aims to provide affordable storage and reliable delivery solutions. By combining modern technology, trust, and convenience, GODAM empowers local sellers, supports small businesses, and transforms online trading into a safe, seamless, and rewarding experience for users across Nepal.</p>
-            </div>
+                <div class="grid" style="margin-top: 4rem;">
+                    <div class="card">
+                        <i class="fas fa-eye card-icon"></i>
+                        <h3>Our Vision</h3>
+                        <p>To become Nepal's most trusted digital ecosystem where every individual and small business
+                            can trade with confidence and reach their full potential.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-rocket card-icon"></i>
+                        <h3>Our Mission</h3>
+                        <p>By combining cutting-edge technology with local logistics and secure storage, we aim to
+                            bridge the gap between buyers and sellers across all provinces of Nepal.</p>
+                    </div>
+                </div>
 
-            <div class="about-section">
-                <h2>Our Core Values</h2>
-                <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div class="value-card">
-                        <h3><i class="fas fa-users" style="color: #e0a800;"></i> Community First</h3>
-                        <p>We are building a platform for all Nepalis—to empower sellers and provide value to buyers.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3><i class="fas fa-shield-alt" style="color: #e0a800;"></i> Trust & Safety</h3>
-                        <p>Every feature is designed with security in mind to create a reliable trading environment.</p>
-                    </div>
-                    <div class="value-card">
-                        <h3><i class="fas fa-bolt" style="color: #e0a800;"></i> Innovation</h3>
-                        <p>We leverage technology to solve real problems, like integrated storage and logistics.</p>
+                <div class="glass-panel" style="margin-top: 5rem; text-align: center;">
+                    <h2 style="color: var(--primary); margin-bottom: 2rem;">Our Core Values</h2>
+                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-handshake"
+                                    style="color: var(--primary);"></i> Transparency</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.7;">No hidden fees. No misleading listings. Just
+                                honest trading.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-shield-alt"
+                                    style="color: var(--primary);"></i> Integrity</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.7;">We protect our users with the highest security
+                                standards in the region.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-users"
+                                    style="color: var(--primary);"></i> Community</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.7;">We grow when our sellers grow. Dedicated to
+                                empowering locals.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="about-cta" style="text-align: center; margin-top: 4rem; padding: 3rem; background: #f8f9fa; border-radius: 20px;">
-                <h2>Ready to be part of the story?</h2>
-                <p>Join thousands who are already buying, selling, and growing with Godam Nepal.</p>
-                <a href="/contact.html" class="cta-button">Get in Touch</a>
-                <a href="/products/" class="cta-button" style="background: transparent; border: 2px solid #e0a800; color: #e0a800; margin-left: 1rem;">Start Shopping</a>
+        <!-- CTA SECTION -->
+        <section style="background: var(--bg-white); border-top: 1px solid #eee;">
+            <div class="container text-center animate-up">
+                <h2 style="margin-bottom: 1.5rem;">Join the Evolution</h2>
+                <p
+                    style="color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Whether you're a seasoned seller or just starting out, Godam Nepal provides the tools you need to
+                    succeed in the digital economy.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="/contact.html" class="cta-button">Partner With Us</a>
+                    <a href="/products.html" class="cta-button"
+                        style="background: var(--secondary); color: white;">Start Shopping</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER (Copy from index.html) -->
+    <!-- FOOTER -->
     <footer>
-        <div class="container footer-container">
-            <div class="footer-logo">
-                <div class="logo-title">GODAM NEPAL</div>
-                <p>Nepal's Revolutionary Online Marketplace</p>
-                <div class="social-icons" style="margin-top: 1rem;">
-                    <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-title">GODAM NEPAL</div>
+                    <p>Empowering local commerce through technology and trust. Nepal's premier digital marketplace.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Marketplace</h3>
+                    <ul>
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html?filter=trending">Trending Now</a></li>
+                        <li><a href="/products.html?filter=new">New Arrivals</a></li>
+                        <li><a href="/contact.html">Sell with Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Careers</a></li>
+                        <li><a href="/contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/refund-policy.html">Refund Policy</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products/">All Products</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="/terms-of-service.html">Terms of Service</a></li>
-                    <li><a href="/refund-policy.html">Return Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-envelope"></i> info@godamnepal.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
-            </div>
-        </div>
-        <div class="container">
-            <p class="copyright">© <span id="currentYear">2026</span> GODAM NEPAL. All rights reserved. Revolutionizing Ecommerce in Nepal.</p>
+            <p class="copyright">© 2026 Godam Nepal. All rights reserved. Built for Nepal with ❤️</p>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('mainNav');
+        btn.addEventListener('click', () => nav.classList.toggle('active'));
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .card, .glass-panel').forEach(s => observer.observe(s));
+    </script>
 </body>
+
 </html>

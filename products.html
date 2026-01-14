@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-NP" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Godam Nepal | Nepal's Revolutionary Online Marketplace & Ecommerce Platform</title>
+    <meta name="description"
+        content="Buy and sell new and used items easily on Godam Nepal - Nepal's trusted online marketplace. Find gadgets, fashion, home goods and more with secure storage & delivery.">
+    <meta name="keywords"
+        content="online marketplace Nepal, buy online Nepal, sell online Nepal, Nepali ecommerce, Nepal eBay, gadgets Nepal, fashion Nepal">
+    <meta name="author" content="Godam Nepal">
+    <meta name="theme-color" content="#0a1120">
+    <meta name="google-adsense-account" content="ca-pub-2778216399702742">
+    <meta name="google-adsense-account" content="ca-pub-2778216399702742">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Godam Nepal | Nepal's Online Marketplace">
+    <meta property="og:description"
+        content="Nepal's trusted platform to buy and sell everything. Simple, fast, and accessible for everyone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://godamnepal.com.np/products.html">
+    <meta property="og:image" content="https://godamnepal.com.np/logo-og.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://godamnepal.com.np/products.html">
+
+    <!-- Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-title">GODAM NEPAL</div>
+                <div class="logo-subtitle">ONLINE MARKETPLACE</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu"><i
+                    class="fas fa-bars"></i></button>
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html" class="active">Products</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="padding: 6rem 0; margin-bottom: 2rem;">
+        <div class="container animate-up">
+            <h1>Marketplace</h1>
+            <p>Discover high-quality items from trusted sellers across Nepal.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div style="display: flex; gap: 2rem; margin-bottom: 4rem; flex-wrap: wrap;">
+            <!-- SIDEBAR FILTERS -->
+            <aside style="flex: 1; min-width: 250px;">
+                <div class="glass-panel" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Filters</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; opacity: 0.7;">
+                            Category</h4>
+                        <ul style="opacity: 0.9;">
+                            <li style="margin-bottom: 0.5rem;"><a href="#" class="active"
+                                    style="color: var(--primary);">All Categories</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#">Electronics</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#">Fashion</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#">Home & Living</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="#">Books</a></li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem; text-transform: uppercase; opacity: 0.7;">
+                            Price Range</h4>
+                        <input type="range" min="0" max="100000" style="width: 100%; accent-color: var(--primary);">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-top: 0.5rem;">
+                            <span>Rs. 0</span>
+                            <span>Rs. 100k+</span>
+                        </div>
+                    </div>
+                    <button class="cta-button" style="width: 100%; justify-content: center; padding: 0.75rem;">Apply
+                        Filters</button>
+                </div>
+            </aside>
+
+            <!-- PRODUCT GRID -->
+            <div style="flex: 3; min-width: 300px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <nav style="display: flex; gap: 0.5rem; font-size: 0.9rem; opacity: 0.7;">
+                        <a href="/">Home</a> <span>/</span> <span style="color: var(--primary);">Products</span>
+                    </nav>
+                    <select
+                        style="padding: 0.5rem; border-radius: var(--radius-sm); border: 1px solid var(--text-muted);">
+                        <option>Sort by: Newest</option>
+                        <option>Sort by: Price (Low to High)</option>
+                        <option>Sort by: Price (High to Low)</option>
+                        <option>Sort by: Popularity</option>
+                    </select>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+                    <!-- Placeholder Product 1 -->
+                    <div class="card" style="padding: 0; overflow: hidden; text-align: left;">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                            alt="Headphones" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 1.5rem;">
+                            <span
+                                style="font-size: 0.7rem; text-transform: uppercase; color: var(--primary); font-weight: 700;">Electronics</span>
+                            <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Premium Wireless Headphones</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Noise
+                                cancelling, 40h battery...</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 800; font-size: 1.2rem; color: var(--secondary);">Rs.
+                                    12,500</span>
+                                <a href="#" style="color: var(--primary); font-size: 1.2rem;"><i
+                                        class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Product 2 -->
+                    <div class="card" style="padding: 0; overflow: hidden; text-align: left;">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                            alt="Watch" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 1.5rem;">
+                            <span
+                                style="font-size: 0.7rem; text-transform: uppercase; color: var(--primary); font-weight: 700;">Fashion</span>
+                            <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Minimalist Analog Watch</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Water
+                                resistant, leather strap...</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 800; font-size: 1.2rem; color: var(--secondary);">Rs.
+                                    4,200</span>
+                                <a href="#" style="color: var(--primary); font-size: 1.2rem;"><i
+                                        class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Product 3 -->
+                    <div class="card" style="padding: 0; overflow: hidden; text-align: left;">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+                            alt="Gadget" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 1.5rem;">
+                            <span
+                                style="font-size: 0.7rem; text-transform: uppercase; color: var(--primary); font-weight: 700;">Gadgets</span>
+                            <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Smart Home Assistant</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Voice control,
+                                speaker, Wifi...</p>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 800; font-size: 1.2rem; color: var(--secondary);">Rs.
+                                    6,800</span>
+                                <a href="#" style="color: var(--primary); font-size: 1.2rem;"><i
+                                        class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAGINATION -->
+                <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 4rem;">
+                    <a href="#"
+                        style="padding: 0.75rem 1rem; background: var(--secondary); color: white; border-radius: var(--radius-sm);">1</a>
+                    <a href="#"
+                        style="padding: 0.75rem 1rem; background: var(--bg-white); border-radius: var(--radius-sm);">2</a>
+                    <a href="#"
+                        style="padding: 0.75rem 1rem; background: var(--bg-white); border-radius: var(--radius-sm);">3</a>
+                    <a href="#"
+                        style="padding: 0.75rem 1rem; background: var(--bg-white); border-radius: var(--radius-sm);"><i
+                            class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-title">GODAM NEPAL</div>
+                    <p>Empowering local commerce through technology and trust. Nepal's premier digital marketplace.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Marketplace</h3>
+                    <ul>
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html?filter=trending">Trending Now</a></li>
+                        <li><a href="/products.html?filter=new">New Arrivals</a></li>
+                        <li><a href="/contact.html">Sell with Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Careers</a></li>
+                        <li><a href="/contact.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">© <span id="year">2026</span> Godam Nepal. All rights reserved. Built for Nepal with ❤️
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const btn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('mainNav');
+        btn.addEventListener('click', () => nav.classList.toggle('active'));
+
+        // Year
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .card').forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>
